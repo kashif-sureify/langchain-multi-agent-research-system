@@ -4,7 +4,9 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import StrOutputParser
 from langgraph.checkpoint.memory import InMemorySaver
 from src.tools.tools import web_search, scrape_url
-from src.prompts.prompts import search_agent_prompt, reader_agent_prompt, writer_prompt, critic_prompt
+from src.prompts.prompts import (
+    search_agent_prompt, reader_agent_prompt, writer_prompt, reviser_prompt, critic_prompt, topic_ideas_prompt,
+)
 from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
@@ -44,5 +46,11 @@ def build_reader_agent():
 
 writer_chain = writer_prompt | model | StrOutputParser()
 
+# 3rd Step when improving a report: rewrites the previous report to address the Critic's feedback
+reviser_chain = reviser_prompt | model | StrOutputParser()
+
 # 4th Step: Critic Chain
 critic_chain = critic_prompt | model | StrOutputParser()
+
+# UI helper (not a pipeline step): suggests sample research topics for a category
+topic_ideas_chain = topic_ideas_prompt | model | StrOutputParser()
