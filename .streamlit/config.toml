@@ -1,0 +1,12 @@
+[theme]
+# Accent color for Streamlit's built-in widgets (focus rings, toggles). The light, dark and
+# system modes themselves are applied by ui/theme.py and switched from the app's sidebar.
+primaryColor = "#0E5E5A"
+
+[client]
+# Hide Streamlit's developer menu items, such as Deploy
+toolbarMode = "minimal"
+
+[browser]
+# Don't send usage statistics to Streamlit
+gatherUsageStats = false

@@ -8,6 +8,10 @@ langchain-google-genai>=4.5.0
 # Web framework for building interactive applications
 streamlit>=1.67.0
 
+# PDF export of reports (Markdown -> HTML -> PDF)
+pymupdf>=1.26.0
+markdown-it-py>=3.0.0
+
 
 # Tavily Search Tool
 tavily-python>=0.8.5
