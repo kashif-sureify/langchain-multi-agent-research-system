@@ -79,11 +79,29 @@ Topic: {topic}
 Research Gathered:
 {research}
 
-Structure the report as:
-- Introduction
-- Key Findings (minimum 3 well-explained points)
-- Conclusion
-- Sources (list all URLs found in the research)
+Format the report in Markdown, using exactly these sections:
+
+# <A specific, descriptive title>
+
+## Summary
+2-3 sentences giving the main answer to the topic.
+
+## Introduction
+What the topic is, why it matters now, and what this report covers.
+
+## Key Findings
+3 to 5 findings, each under its own ### heading. Group them by theme, not by source.
+For each finding: state the point, explain it using specific details from the research (names, dates, numbers, short quotes), and cite sources inline as [1], [2]. If sources disagree, say so.
+
+## Limitations
+Parts of the topic the research did not cover well, and any findings that are early, disputed or based on a single source.
+
+## Conclusion
+What the findings mean taken together. Don't just repeat them.
+
+## Sources
+A numbered list matching the inline citations: [1] Title - URL.
+Include only the sources you cited, and leave out any listed under Failed Sources.
 
 Be detailed, factual and professional."""),
 ])
@@ -97,8 +115,8 @@ Today's date is {current_date}. Use it to judge whether dates in the report are 
 
 When evaluating a report, check:
 - Accuracy: every claim is supported by the research provided, and is not vague or overstated. Flag any claim, figure or source that does not appear in the research.
-- Structure: it has an introduction, at least 3 well-explained key findings, a conclusion and a sources list.
-- Sources: findings can be traced to the listed sources, and every listed URL appears in the research.
+- Structure: it has a title, a summary, an introduction, 3 to 5 well-explained key findings with inline citations, a limitations section, a conclusion and a numbered sources list.
+- Sources: every inline citation like [1] matches an entry in the sources list, every listed URL appears in the research, and no source the research marks as failed is listed.
 - Clarity: it is easy to follow and free of filler.
 
 Judge accuracy against the research provided, not your own knowledge. Point to the exact part of the report for each strength or problem. Don't rewrite the report."""),
